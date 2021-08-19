@@ -1,0 +1,4 @@
+SHOW DATABASES;
+SHOW ENGINES;
+CREATE DATABASE belajar_mysql;
+USE belajar_mysql;
