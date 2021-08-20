@@ -29,3 +29,11 @@ WHERE id = 'P0011';
 UPDATE products
 SET price = price - 2000
 WHERE id = 'P0011';
+
+UPDATE products
+SET category = 'STORAGE DEVICE'
+WHERE id = 'P0005';
+
+UPDATE products
+SET category = 'STORAGE DEVICE'
+WHERE id IN ('P0006', 'P0007', 'P0008', 'P0009', 'P0010', 'P0011', 'P0012', 'P0014', 'P0015');
