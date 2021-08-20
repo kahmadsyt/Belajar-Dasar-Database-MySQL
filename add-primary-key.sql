@@ -1,0 +1,6 @@
+ALTER TABLE products
+ADD PRIMARY KEY (id);
+
+DESCRIBE products;
+
+SHOW CREATE TABLE products;
