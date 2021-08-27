@@ -1,0 +1,22 @@
+SHOW DATABASES;
+SHOW TABLES;
+USE belajar_mysql;
+DESCRIBE products;
+
+SELECT *
+FROM products;
+
+SELECT id,
+	CASE category
+    	WHEN 'NOTEBOOK GAMING' THEN 'NOTEBOOK'
+        WHEN 'DESKTOP COMPUTER' THEN 'KOMPUTER DESKTOP'
+        WHEN 'KABEL' THEN 'AKSESORIS'
+        WHEN 'STORAGE DEVICE' THEN 'PENYIMPANAN DATA'
+        WHEN 'MEMORY' THEN 'AKSESORIS'
+        ELSE 'LAIN-LAIN'
+    END AS 'KATEGORI PRODUK'
+FROM products;
+
+SELECT id, quantity,
+	IF(quantity <= 50, 'Cuci Gudang', 'Best Seller')
+FROM products;
