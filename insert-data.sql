@@ -36,3 +36,12 @@ VALUES ('P0003', 'KABEL HDMI', 'KABEL HDMI 10 METER', 1000000, 100),
 
 SELECT *
 FROM products;
+
+INSERT INTO products(id, name, category, description, price, quantity)
+VALUES ('P0016', 'RAM 4GB', 'MEMORY', 'KINGSTON', 800000, 50);
+
+ALTER TABLE products
+ADD CONSTRAINT price_check CHECK (price >= 10000);
+
+INSERT INTO products(id, name, category, description, price, quantity)
+VALUES ('P0017', 'TETS', 'TEST', 'TEST', 5000, 50);
