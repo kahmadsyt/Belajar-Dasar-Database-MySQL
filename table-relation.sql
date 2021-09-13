@@ -33,7 +33,7 @@ DROP CONSTRAINT fk_wishlist_product;
 ALTER TABLE wishlist
 ADD CONSTRAINT fk_wishlist_product
 FOREIGN KEY(id_product) REFERENCES products(id)
-ON DELETE CASCADE ON UPDATE NO ACTION;
+ON DELETE CASCADE ON UPDATE CASCADE;
 
 INSERT INTO products(id, name, category, description, price, quantity)
 VALUES('P0018', 'LAPTOP BACK TO SCHOOL', 'NOTEBOOK', 'LAPTOP UNTUK SEKOLAH', 8000000, 70);
@@ -50,3 +50,7 @@ FROM wishlist;
 DELETE
 FROM products
 WHERE id = 'P0018';
+
+DELETE
+FROM wishlist
+WHERE id = 'P0001';
