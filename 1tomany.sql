@@ -111,7 +111,7 @@ SET id_category = 'RAM-03'
 WHERE id IN ('P0016');
 
 SELECT	products.id,
-		products.name,
+		    products.name,
         categories.name
 FROM products
 JOIN categories ON (categories.id = products.id_category);
