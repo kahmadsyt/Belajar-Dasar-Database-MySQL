@@ -56,3 +56,43 @@ SELECT	customers.email AS cust_email,
 FROM wishlist
 JOIN products ON (products.id = wishlist.id_product)
 JOIN customers ON (customers.id = wishlist.id_customer);
+
+SELECT * FROM products;
+SELECT * FROM categories;
+
+INSERT INTO categories (id, name)
+VALUES  ('SAMPLE-01', 'SAMPLE-PRODUK-01'),
+        ('SAMPLE-02', 'SAMPLE-PRODUK-02');
+        
+INSERT INTO products (id, name, price, quantity)
+VALUES  ('CONTOH-01', 'SAMPLE-PRODUK-01', 100000, 10),
+        ('CONTOH-02', 'SAMPLE-PRODUK-02', 200000, 20 ),
+        ('CONTOH-03', 'SAMPLE-PRODUK-03', 300000, 30);
+        
+SELECT * FROM categories
+INNER JOIN products ON (products.id_category = categories.id);
+
+SELECT * FROM categories
+LEFT JOIN products ON (products.id_category = categories.id);
+
+SELECT * FROM categories
+RIGHT JOIN products ON (products.id_category = categories.id);
+
+SELECT * FROM categories
+CROSS JOIN products;
+
+CREATE TABLE numbers
+(
+    id INT NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE = InnoDB;
+
+INSERT INTO numbers (id)
+VALUES (1), (2), (3), (4), (5), (6), (7), (8), (9), (10);
+
+SELECT * FROM numbers;
+
+SELECT numbers1.id, numbers2.id, (numbers1.id * numbers2.id) 
+FROM numbers AS numbers1
+CROSS JOIN numbers AS numbers2
+ORDER BY numbers1.id, numbers2.id;
