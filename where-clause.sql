@@ -52,3 +52,22 @@ WHERE category LIKE 'STO%';
 SELECT *
 FROM products
 WHERE price BETWEEN 500000 AND 1000000;
+
+SELECT AVG(price) FROM products;
+
+SELECT * FROM products WHERE price > (SELECT AVG(price) FROM products);
+
+UPDATE products
+SET price = 50000000
+WHERE id = 'CONTOH-01';
+
+SELECT * FROM products;
+
+SELECT MAX(price) FROM products;
+
+SELECT price FROM categories
+JOIN products ON (products.id_category = categories.id);
+
+SELECT MAX(price) 
+FROM (SELECT price FROM categories
+JOIN products ON (products.id_category = categories.id)) AS cat_prod;
